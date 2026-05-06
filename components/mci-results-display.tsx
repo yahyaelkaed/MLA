@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface MciResultsDisplayProps {
   results: any;
@@ -9,7 +9,12 @@ interface MciResultsDisplayProps {
   loading: boolean;
 }
 
-export default function MciResultsDisplay({ results, error, onReset, loading }: MciResultsDisplayProps) {
+export default function MciResultsDisplay({
+  results,
+  error,
+  onReset,
+  loading,
+}: MciResultsDisplayProps) {
   if (error) {
     return (
       <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-6 h-fit">
@@ -29,7 +34,9 @@ export default function MciResultsDisplay({ results, error, onReset, loading }: 
     return (
       <div className="bg-card border border-border rounded-xl p-8 h-fit sticky top-24 flex flex-col items-center justify-center min-h-96">
         <div className="w-12 h-12 rounded-full border-4 border-border border-t-primary animate-spin mb-4"></div>
-        <p className="text-muted-foreground font-semibold">Analyzing MCI Risk...</p>
+        <p className="text-muted-foreground font-semibold">
+          Analyzing MCI Risk...
+        </p>
       </div>
     );
   }
@@ -38,20 +45,21 @@ export default function MciResultsDisplay({ results, error, onReset, loading }: 
     return (
       <div className="bg-card border border-border rounded-xl p-8 h-fit sticky top-24 flex flex-col items-center justify-center min-h-96">
         <p className="text-muted-foreground text-center px-4">
-          Fill in the patient assessment and click &quot;Predict MCI Risk&quot; to see AI analysis
+          Fill in the patient assessment and click &quot;Predict MCI Risk&quot;
+          to see AI analysis
         </p>
       </div>
     );
   }
 
   const prediction = results.prediction;
-  const isHighRisk = prediction.toLowerCase().includes('high') || prediction.toLowerCase().includes('yes') || prediction.toLowerCase().includes('positive');
-  
-  const colorClass = isHighRisk 
-    ? 'from-red-500/10 to-red-500/5 border-red-200' 
-    : 'from-green-500/10 to-green-500/5 border-green-200';
+  const isHighRisk = prediction == "Alzheimer Risk";
 
-  const titleColorClass = isHighRisk ? 'text-red-700' : 'text-green-700';
+  const colorClass = isHighRisk
+    ? "from-red-500/10 to-red-500/5 border-red-200"
+    : "from-green-500/10 to-green-500/5 border-green-200";
+
+  const titleColorClass = isHighRisk ? "text-red-700" : "text-green-700";
 
   return (
     <div className="space-y-6">
@@ -67,10 +75,14 @@ export default function MciResultsDisplay({ results, error, onReset, loading }: 
 
         <div className="space-y-4">
           <div className="p-4 bg-white/50 rounded-lg">
-            <h4 className="font-semibold text-foreground mb-1 text-sm uppercase tracking-wider">Analysis</h4>
+            <h4 className="font-semibold text-foreground mb-1 text-sm uppercase tracking-wider">
+              Analysis
+            </h4>
             <p className="text-foreground leading-relaxed">
-              Based on the provided MMSE, MoCA, and ADAS-Cog scores, the model has identified a 
-              <strong> {isHighRisk ? 'High' : 'Low'} Risk</strong> of MCI conversion.
+              Based on the provided MMSE, MoCA, and ADAS-Cog scores, the model
+              has identified
+              <strong> {isHighRisk ? "High" : "No"} Risk</strong> of MCI
+              conversion.
             </p>
           </div>
 
@@ -82,12 +94,13 @@ export default function MciResultsDisplay({ results, error, onReset, loading }: 
           </button>
         </div>
       </div>
-      
+
       <div className="bg-card border border-border rounded-xl p-6">
         <h4 className="font-bold text-foreground mb-3 text-lg">Disclaimer</h4>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          This AI model is a decision-support tool and should not replace professional clinical judgment. 
-          Results should be interpreted within the full clinical context by a qualified healthcare professional.
+          This AI model is a decision-support tool and should not replace
+          professional clinical judgment. Results should be interpreted within
+          the full clinical context by a qualified healthcare professional.
         </p>
       </div>
     </div>

@@ -18,6 +18,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-4">
               <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Caregiver Workload</a>
+              <a href="/early-detection" className="text-sm font-medium hover:text-primary transition-colors">Early Detection</a>
               <a href="/mci-prediction" className="text-sm font-medium hover:text-primary transition-colors">MCI Prediction</a>
               <a href="/outlier-detection" className="text-sm font-medium hover:text-primary transition-colors">Outlier Detection</a>
               <a href="/severity-prediction" className="text-sm font-medium hover:text-primary transition-colors">Severity Prediction</a>

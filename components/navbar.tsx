@@ -15,7 +15,11 @@ export default function Navbar() {
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-4">
+              <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Caregiver Workload</a>
+              <a href="/mci-prediction" className="text-sm font-medium hover:text-primary transition-colors">MCI Prediction</a>
+            </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
               <span className="text-sm font-medium text-foreground">Connected</span>

@@ -20,6 +20,7 @@ export default function Navbar() {
               <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Caregiver Workload</a>
               <a href="/mci-prediction" className="text-sm font-medium hover:text-primary transition-colors">MCI Prediction</a>
               <a href="/outlier-detection" className="text-sm font-medium hover:text-primary transition-colors">Outlier Detection</a>
+              <a href="/severity-prediction" className="text-sm font-medium hover:text-primary transition-colors">Severity Prediction</a>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>

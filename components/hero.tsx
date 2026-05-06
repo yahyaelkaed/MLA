@@ -15,11 +15,11 @@ export default function Hero() {
         </div>
         
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance">
-          Predict Caregiver Workload with AI
+          Alzheimer Clinical Diagnostic Suite
         </h1>
         
         <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance">
-          Intelligent assessment tool for Alzheimer's patient care planning. Predict care requirements with 94.47% accuracy.
+          Comprehensive AI-powered assessment tools for early detection, MCI risk analysis, and clinical care planning.
         </p>
       </div>
     </section>

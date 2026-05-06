@@ -43,7 +43,7 @@ interface AssessmentFormProps {
 export default function AssessmentForm({ onSubmit, loading }: AssessmentFormProps) {
   const [formData, setFormData] = useState<FormData>({
     tasks_completed_last_week: 0,
-    patient_activity_level: 50,
+    patient_activity_level: 5,
     num_alerts_last_week: 0,
     cognitive_score: 15,
     sleep_hours_avg: 6,

@@ -10,11 +10,11 @@ import ModelPerformance from '@/components/model-performance';
 import Footer from '@/components/footer';
 
 export default function Home() {
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState<any>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
 
-  const handlePrediction = async (formData) => {
+  const handlePrediction = async (formData: any) => {
     setLoading(true);
     setError(null);
     
@@ -40,8 +40,8 @@ export default function Home() {
 
       console.log("HF API Result:", result);
 
-      if (result && result.data) {
-        const rawResult = String(result.data[0]);
+      if (result && (result as any).data) {
+        const rawResult = String((result as any).data[0]);
         // Handle both "Predicted Workload: X" and raw numbers
         const hoursMatch = rawResult.match(/Predicted Workload:\s*([\d.]+)/i);
         const hours = hoursMatch ? parseFloat(hoursMatch[1]) : parseFloat(rawResult) || 0;
@@ -68,8 +68,8 @@ export default function Home() {
   };
 
   const handleReset = () => {
-    setResults(null);
-    setError(null);
+    setResults(null as any);
+    setError(null as any);
   };
 
   return (

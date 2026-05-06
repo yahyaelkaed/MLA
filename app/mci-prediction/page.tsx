@@ -9,9 +9,9 @@ import MciModelPerformance from "@/components/mci-model-performance";
 import Footer from "@/components/footer";
 
 export default function MciPage() {
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState<any>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<any>(null);
 
   const handlePrediction = async (formData: any) => {
     setLoading(true);
@@ -40,9 +40,9 @@ export default function MciPage() {
 
       console.log("HF API Result (MCI):", result);
 
-      if (result && result.data) {
+      if (result && (result as any).data) {
         setResults({
-          prediction: String(result.data[0]),
+          prediction: String((result as any).data[0]),
           formData,
         });
       } else {
@@ -61,8 +61,8 @@ export default function MciPage() {
   };
 
   const handleReset = () => {
-    setResults(null);
-    setError(null);
+    setResults(null as any);
+    setError(null as any);
   };
 
   return (
